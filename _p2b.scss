@@ -1,0 +1,38 @@
+.grad-yellow{
+	@include linear-grad(
+      (
+        (color(yellowlighter),10%,0.8),
+        (color(yellow),100%,1)
+      ),
+    );
+}
+
+%doubleSquare{ position: relative; display: block; width: fit-content; z-index: 0;
+	&:before,
+	&:after{@include pseudo(); width: 1.5em;height: 1.5em; z-index: -1;}
+	&:before { 
+		@include linear-grad(
+	      (
+	        (color(yellowlighter),0%,1),
+	        (color(yellowlight),100%,1)
+	      ),
+	    );
+	}
+	&:after{
+		@include linear-grad(
+	      (
+	        (color(yellowlight),0%,1),
+	        (color(yellow),100%,1)
+	      ),
+	    );
+	}
+}
+.doubleSquare--left{@extend %doubleSquare;
+	&:before{left: -0.25em; top:50%; transform: translate(-99%,-100%);}
+	&:after {left: -0.25em; top:50%; transform: translate(0%,-50%); }
+}
+.doubleSquare--right {@extend %doubleSquare;
+	&:before{right: -0.25em; top:50%; transform: translate(0,-50%);}
+	&:after {right: -0.25em; top:50%; transform: translate(99%,0%); }
+}
+
