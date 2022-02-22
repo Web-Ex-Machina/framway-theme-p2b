@@ -7,6 +7,43 @@
     );
 }
 
+%simpleRect{ position: relative; display: block; width: fit-content; z-index: 0;
+	&:before{@include pseudo(); width: 10%;height: 100%; z-index: -1;}
+	&:before { 
+		@include linear-grad(
+      (
+        (color(yellowlighter),0%,1),
+        (color(yellowlight),100%,1)
+      ),
+      'to top'
+    );
+	}
+}
+.simpleRect--left{@extend %simpleRect;
+	&:before{left: -15%; top:0;}
+}
+.simpleRect--right {@extend %simpleRect;
+	&:before{right: -15%; top:0;}
+}
+
+%simpleSquare{ position: relative; display: block; width: fit-content; z-index: 0;
+	&:before{@include pseudo(); width: 75%;height: 75%; z-index: -1;}
+	&:before { 
+		@include linear-grad(
+	      (
+	        (color(yellowlighter),0%,1),
+	        (color(yellowlight),100%,1)
+	      ),
+	    );
+	}
+}
+.simpleSquare--left{@extend %simpleSquare;
+	&:before{left: 0; top:0; transform: translate(-25%,0);}
+}
+.simpleSquare--right {@extend %simpleSquare;
+	&:before{right: 0; top:50%; transform: translate(0,-50%);}
+}
+
 %doubleSquare{ position: relative; display: block; width: fit-content; z-index: 0;
 	&:before,
 	&:after{@include pseudo(); width: 1.5em;height: 1.5em; z-index: -1;}
