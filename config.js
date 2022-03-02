@@ -4,6 +4,7 @@ module.exports = {
 		'yellow' : '#F2CA52',
 		'yellowlight' : '#f2d06b',
 		'yellowlighter' : '#ffff71',
+		'p2bblack': '#0a0a0a'
 	},
 	'primary': 'colors(yellow)',
 	'secondary': 'colors(blacklight)',
