@@ -7,7 +7,7 @@ module.exports = {
 		'p2bblack': '#0a0a0a'
 	},
 	'primary': 'colors(yellow)',
-	'secondary': 'colors(blacklight)',
+	'secondary': 'colors(p2bblack)',
 
 	'body': {
 		'background': 'colors(white)',
