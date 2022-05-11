@@ -24,10 +24,13 @@ body.home,.body.bgBrush1{
   		.header__action {justify-content: flex-end;}
   		.header__action i[class*=fa]{margin-left: 0.45em;}
   	}
-  	&.col--center{flex-grow: 0; align-self: center;}
+  	&.col--center{flex-grow: 0; align-self: center; text-align: center;
+  		@include media-max(sm){order:-1; width: 100%; padding: 1em 1em 0; }
+  	}
   	&:not(.col--center){
   		&:after{content: '';display: block;width: 100%;height: 1px;background: header(font-color); margin-top: 1.25em;}
   	}
+  	@include media-max(sm){ padding: 1em; }
   }
 	.header__action{@extend %ft-montserrat; cursor: pointer; display: flex;align-items:center;text-transform: uppercase;color: inherit; text-decoration: none; 
 		i[class*=fa],svg.fa{font-size: 1.5em; line-height: 1.2; transition: color 0.4s;}
@@ -48,10 +51,10 @@ h1,h2,h3,h4,h5,{@extend %ft-montserrat;}
 .mod_breadcrumb{ display: flex; justify-content: flex-end; opacity: 0; transition: opacity 0.6s; padding: 0;
   &.active{opacity: 1;}
   ul{@extend .reset !optional; min-height: 50px; align-items: center; display: flex; white-space: nowrap; justify-content: flex-start; max-width: 100%; flex-wrap: wrap;}
-  li{padding: 0 1rem; position: relative; line-height: 35px;
+  li{position: relative; line-height: 35px;
     &:hover,
     &.active{color: $primary;}
-    &:not(.last):after{@include pseudo(); content:" > "; right: 0; top: 0; bottom: 0; margin: auto; transform: translateX(50%);}
+    // &:not(.last):after{@include pseudo(); content:" > "; right: 0; top: 0; bottom: 0; margin: auto; transform: translateX(50%);}
     &.last{@include ellipsis();}
   }
   a{color: inherit;text-decoration: none; @include ellipsis();
